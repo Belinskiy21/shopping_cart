@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ShoppingCart::VERSION
   s.authors     = ["Oleg"]
   s.email       = ["belinskiy21@gmail.com"]
-  s.homepage    = "TODO"
+  s.homepage    = 'https://github.com/Belinskiy21/shopping_cart'
   s.summary     = 'Simple shopping cart.'
   s.description = %q(Shopping cart with a multi-step checkout,
                      easily mounted into Rails application.)
