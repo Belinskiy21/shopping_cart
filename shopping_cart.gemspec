@@ -18,6 +18,13 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.4"
+  s.add_dependency 'virtus', '~> 1.0', '>= 1.0.5'
+  s.add_dependency 'wicked', '~> 1.3', '>= 1.3.2'
+  s.add_dependency 'jquery-rails', '~> 4.3', '>= 4.3.1'
+  s.add_dependency 'country_select', '~> 3.1'
+  s.add_dependency 'haml'
+  s.add_dependency 'rails-i18n'
+  s.add_dependency 'devise', '~> 4.3'
 
   s.add_development_dependency "sqlite3"
 end
