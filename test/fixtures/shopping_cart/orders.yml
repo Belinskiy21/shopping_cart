@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  shipping_method_id: 1
+  order_state: MyString
+  credit_card_id: 1
+
+two:
+  user_id: 1
+  shipping_method_id: 1
+  order_state: MyString
+  credit_card_id: 1

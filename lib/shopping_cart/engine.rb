@@ -7,6 +7,7 @@ module ShoppingCart
     require 'devise'
     require 'haml'
     require 'rails-i18n'
+    require 'aasm'
     isolate_namespace ShoppingCart
   end
 end
