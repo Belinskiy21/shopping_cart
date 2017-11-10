@@ -49,3 +49,4 @@ en:
   has_been_sent_to: 'An order confirmation has been sent to '
   back_to_store: 'Back to Store'
   coupon_applied: 'Your coupon was applied!'
+  no_items: 'No items in cart!!!'

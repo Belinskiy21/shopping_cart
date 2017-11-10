@@ -21,7 +21,7 @@
         %tr
           %td
             .general-img-wrap-table
-              = cl_image_tag img_of item.book, class: 'cart-img-shadow'
+              = image_tag img_of item.book, class: 'cart-img-shadow'
           %td
             %p.title= item.book.title
           %td
@@ -67,6 +67,5 @@
                   %strong.font-18= t('total')
                 %td
                   %strong.font-18= number_to_currency(@current_order.total)
--#             = link_to t('checkout'),  checkout_index_path , class: 'btn btn-default mb-20 visible-xs-inline-block'
--# .text-center
--#   = link_to t('checkout'), checkout_index_path , class: 'btn btn-default mb-20'
+.text-center
+  = link_to t('checkout'), checkout_index_path , class: 'btn btn-default mb-20'
