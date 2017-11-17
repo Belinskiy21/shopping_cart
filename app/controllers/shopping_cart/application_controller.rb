@@ -6,9 +6,9 @@ module ShoppingCart
 
     def current_order
       if session[:order_id].nil?
-        Order.new
+        ShoppingCart::Order.new
       else
-        Order.where(id: session[:order_id]).last || Order.new
+        ShoppingCart::Order.where(id: session[:order_id]).last || ShoppingCart::Order.new
       end
     end
   end

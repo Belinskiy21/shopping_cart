@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-i18n'
   s.add_dependency 'devise'
   s.add_dependency 'aasm'
+  s.add_dependency 'pry'
+  s.add_dependency 'cancancan'
 
   s.add_development_dependency "sqlite3"
 end

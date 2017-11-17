@@ -1,16 +1,16 @@
 module ShoppingCart
   class OrderItem < ApplicationRecord
     belongs_to :order
-    belongs_to :book
+    belongs_to :product
 
     validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-    validates :book, presence: true
+    validates :product, presence: true
     validates :order, presence: true
 
     before_save :finalize
 
     def unit_price
-      book.price
+      product.price
     end
 
     def total_price

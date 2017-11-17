@@ -29,7 +29,7 @@ module ShoppingCart::Showable
     end
 
     def show_addresses_params # take data from settings if persist
-      return { user_id: main_app.current_user.id } if current_order.addresses.empty?
+      return { user_id: current_user.id } if current_order.addresses.empty?
       { order_id: current_order.id }
     end
   end
