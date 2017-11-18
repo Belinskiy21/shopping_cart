@@ -20,7 +20,9 @@ Or install it yourself as:
 ```bash
 $ gem install shopping_cart
 ```
-
+then do:
+- Add dependencies to your User and Products model.
+- if your not using Devise you should override current_user method.
 ## Contributing
 Contribution directions go here.
 

@@ -1,6 +1,6 @@
 module ShoppingCart
   class CreditCard < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, class_name: ShoppingCart.user_class.to_s
     has_many :orders
 
     validates :number , :name, :mm_yy, :cvv, presence: true

@@ -1,6 +1,6 @@
 module ShoppingCart
   class Address < ApplicationRecord
-    belongs_to :user, dependent: :destroy, optional: true
+    belongs_to :user, class_name: ShoppingCart.user_class.to_s, dependent: :destroy, optional: true
     belongs_to :order, optional: true
 
 

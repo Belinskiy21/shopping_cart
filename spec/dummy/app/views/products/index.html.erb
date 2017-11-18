@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
+
 <% unless user_signed_in? %>
 <%= link_to 'Sign in', shopping_cart.new_user_session_path %>&nbsp;&nbsp;
 <%= link_to 'Sign up', shopping_cart.new_user_registration_path %>
 <% end %>
 <% if user_signed_in? %>
 <%= "User: #{current_user.email.split('@').first}" %>&nbsp;
+<%= link_to 'Cart', shopping_cart.root_path %>
 <%= button_to 'Log out', shopping_cart.destroy_user_session_path, method: :delete %>
 <% end %>
+
 <h1>Products</h1>
 
 <table>

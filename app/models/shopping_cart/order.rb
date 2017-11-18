@@ -2,7 +2,7 @@ module ShoppingCart
   class Order < ApplicationRecord
     has_many :order_items, dependent: :destroy
     has_many :products, through: :order_items
-    belongs_to :user, optional: true
+    belongs_to :user, class_name: ShoppingCart.user_class.to_s, optional: true
     belongs_to :shipping_method, optional: true
     belongs_to :credit_card, optional: true
     has_one :coupon, dependent: :destroy
