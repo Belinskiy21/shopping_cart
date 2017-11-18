@@ -23,6 +23,9 @@ $ gem install shopping_cart
 then do:
 - Add dependencies to your User and Products model.
 - if your not using Devise you should override current_user method.
+- Add file shopping_cart.rb in your initializer folder and configurate your User and Product like this:
+ShoppingCart.product_class = 'Product'
+ShoppingCart.user_class = 'User'
 ## Contributing
 Contribution directions go here.
 

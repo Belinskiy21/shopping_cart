@@ -10,6 +10,7 @@ module ShoppingCart
     require 'aasm'
     require 'cancancan'
     require 'pry'
+    require 'sass-rails'
     isolate_namespace ShoppingCart
   end
 end

@@ -8,7 +8,7 @@ module ShoppingCart
     def initialize(params = false)
       @save = false
       @params = params
-      @target = Order.find_by(id: order_id) || User.find_by(id: user_id) || User.new
+      @target = ShoppingCart::Order.find_by(id: order_id) || ShoppingCart.user_class.find_by(id: user_id) || ShoppingCart.user_class.new
     end
 
     def save
@@ -23,13 +23,13 @@ module ShoppingCart
     end
 
     def billing
-      fresh_bill = target.addresses.find_or_initialize_by(type: 'Billing')
+      fresh_bill = target.addresses.find_or_initialize_by(type: 'ShoppingCart::Billing')
       fresh_bill.assign_attributes(params_for(:billing)) if save?
       @billing ||= fresh_bill
     end
 
     def shipping
-      fresh_shipp = target.addresses.find_or_initialize_by(type: 'Shipping')
+      fresh_shipp = target.addresses.find_or_initialize_by(type: 'ShoppingCart::Shipping')
       fresh_shipp.assign_attributes(params_for(:shipping)) if save?
       @shipping ||= fresh_shipp
     end

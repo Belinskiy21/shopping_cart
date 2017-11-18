@@ -1,4 +1,5 @@
 %main.container.general-main-wrap
+  =link_to 'Home', main_app.root_path
   %h1.general-title-margin= t('cart')
   - if @current_order.empty?
     .font-18.in-grey-600.text-center.cart_empty= t('cart_is_empty')
@@ -21,11 +22,11 @@
         %tr
           %td
             .general-img-wrap-table
-              = image_tag img_of item.book, class: 'cart-img-shadow'
+              -# = image_tag img_of item.book, class: 'cart-img-shadow'
           %td
-            %p.title= item.book.title
+            %p.title= item.product.title
           %td
-            %span.font-16.in-gold-500= number_to_currency(item.book.price)
+            %span.font-16.in-gold-500= number_to_currency(item.product.price)
           %td
             .input-group
               = link_to order_item_path(item, quantity: item.quantity == 1 ? item.quantity : item.quantity - 1 ), remote: true, method: 'PUT', class: 'input-link' do
@@ -34,7 +35,7 @@
               = link_to order_item_path(item, quantity: item.quantity + 1 ), remote: true, method: 'PUT', class: 'input-link' do
                 %i.fa.fa-plus.line-height-40
             %td
-              %span{class: 'font-16 in-gold-500' + item.id.to_s}= number_to_currency(item.book.price)
+              %span{class: 'font-16 in-gold-500' + item.id.to_s}= number_to_currency(item.product.price)
             %td
               = form_for item, method: :delete do |form|
                 = form.button class: 'close general-cart-close', 'aria-label': 'Close' do

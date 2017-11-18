@@ -1,7 +1,5 @@
 require "shopping_cart/engine"
-require 'devise'
-require 'cancancan'
-require 'pry'
+
 module ShoppingCart
   mattr_accessor :product_class
   mattr_accessor :user_class

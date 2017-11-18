@@ -3,6 +3,8 @@ module ShoppingCart
     belongs_to :user, class_name: ShoppingCart.user_class.to_s, dependent: :destroy, optional: true
     belongs_to :order, optional: true
 
+    scope :shipping, -> { where(type: 'ShoppingCart::Shipping') }
+    scope :billing, -> { where(type: 'ShoppingCart::Billing') }
 
     validates :first_name, :last_name, :address, :city, :zip, :country, :phone, presence: true
     validates_length_of :first_name, :last_name, :address, :city, :country, maximum: 49
@@ -12,10 +14,6 @@ module ShoppingCart
 
     validates_length_of :phone, maximum: 15
     validates_length_of :zip, maximum: 10
-    before_validation :clear_mask
-
-    scope :shipping, -> { where(type: 'Shipping') }
-    scope :billing, -> { where(type: 'Billing') }
     before_validation :clear_mask
 
     def clear_mask

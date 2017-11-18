@@ -16,14 +16,14 @@
           %p.general-info-text= t('all_filds_requeried')
         = f.fields_for @addresses.billing do |ff|
           - bill_errors = @addresses.billing.errors
-          = render 'shared/address', ff: ff, errors: bill_errors
+          = render 'shopping_cart/shared/address', ff: ff, errors: bill_errors
           = f.hidden_field "[billing][order_id]", value: current_order.id
       .col-md-5.col-md-offset-1.mb-60
         .visible-xs.visible-sm
           %h3.general-subtitle= t('shipping_address')
         = f.fields_for @addresses.shipping do |ff|
           - ship_errors = @addresses.shipping.errors
-          = render 'shared/address', ff: ff, errors: ship_errors
+          = render 'shopping_cart/shared/address', ff: ff, errors: ship_errors
           = f.hidden_field "[shipping][order_id]", value: current_order.id
         .form-group.checkbox
           %label.checkbox-label
@@ -34,5 +34,5 @@
     .general-text-align.mb-60
       %p.in-gold-500.font-18= t('summary')
       %table.general-summary-table
-        = render 'shared/checkout_summary_numbers', current_order: current_order
+        = render 'shopping_cart/shared/checkout_summary_numbers', current_order: current_order
       = f.submit t('save_and_continue'), class: 'btn btn-default center-block mb-20'
