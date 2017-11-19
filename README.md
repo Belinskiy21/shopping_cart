@@ -1,5 +1,5 @@
 # ShoppingCart
-Short description and motivation.
+This is engine for any commerce application with goods basket and checkout process. 
 
 ## Usage
 How to use my plugin.
@@ -26,6 +26,7 @@ then do:
 - Add file shopping_cart.rb in your initializer folder and configurate your User and Product like this:
 ShoppingCart.product_class = 'Product'
 ShoppingCart.user_class = 'User'
+- add shipping methods to shopping_cart_shipping_methods table in db.
 ## Contributing
 Contribution directions go here.
 
