@@ -2,10 +2,10 @@
   - current_order.order_items.each_with_index do |item, i|
     .general-cart-item.divider-lg
       .general-img-wrap-table
-        = link_to product_path(item.product) do
-          = cl_image_tag img_of(item.product), alt: 'design-product', class: 'cart-img-shadow'
+        = link_to main_app.products_path(item.product) do
+          -# = image_tag img_of(item.product), alt: 'design-product', class: 'cart-img-shadow'
       %p.title= item.product.title
-      %P.in-grey-600.fw-300= item.product.description.split('. ').first + '.'
+      -# %P.in-grey-600.fw-300= item.product.description.split('. ').first + '.'
       %table.table
         %tr
           %td
@@ -40,12 +40,12 @@
         %tr
           %td
             .general-img-wrap-table
-              = link_to product_path(item.product) do
-                = cl_image_tag img_of(item.product), alt: 'design-product', class: 'cart-img-shadow pull-left'
+              = link_to main_app.products_path(item.product) do
+                -# = image_tag img_of(item.product), alt: 'design-product', class: 'cart-img-shadow pull-left'
           %td
-            = link_to product_path(item.product), class: 'text-as-link' do
+            = link_to main_app.products_path(item.product), class: 'text-as-link' do
               %p.title= item.product.title
-            %p.in-grey-600.fw-300= item.product.description.split('. ').first + '.'
+            -# %p.in-grey-600.fw-300= item.product.description.split('. ').first + '.'
           %td
             %span.font-16.in-gold-500= number_to_currency item.product.price
           %td

@@ -28,5 +28,5 @@
     .general-text-align.mb-60
       %p.in-gold-500.font-18= t('summary')
       %table.general-summary-table
-        = render 'shared/checkout_summary_numbers', current_order: current_order
+        = render 'shopping_cart/shared/checkout_summary_numbers', current_order: current_order
       = f.submit t('save_and_continue'), class: 'btn btn-default center-block mb-20'

@@ -27,7 +27,7 @@
           = f.hidden_field "[shipping][order_id]", value: current_order.id
         .form-group.checkbox
           %label.checkbox-label
-            = f.check_box :use_billing, class: 'checkbox-input', id: 'use_billing', hidden: true
+            = f.check_box :use_billing, class: 'checkbox-input', id: 'use_billing'
             %span.checkbox-icon
               %i.fa.fa-check
             %span.checkbox-text= t('use_billing')

@@ -5,7 +5,7 @@ module ShoppingCart::Updatable
     private
 
     def update_addresses
-      @addresses = AddressesForm.new(addresses_params)
+      @addresses = ShoppingCart::AddressesForm.new(addresses_params)
       render_wizard unless @addresses.save
     end
 
@@ -15,7 +15,7 @@ module ShoppingCart::Updatable
     end
 
     def update_payment
-      @credit_card = CreditCard.new(credit_card_params)
+      @credit_card = ShoppingCart::CreditCard.new(credit_card_params)
       render_wizard unless @credit_card.save
       current_order.update(credit_card: @credit_card, user_id: current_user.id)
     end
