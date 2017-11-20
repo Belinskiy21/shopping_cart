@@ -25,12 +25,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include DeviseRequestSpecHelpers, type: :feature
-  config.include FormHelpers, type: :feature
-  config.include Features::SessionHelpers, type: :feature
   config.include Shoulda::Matchers::ActiveModel, type: :model
   config.include Shoulda::Matchers::ActiveRecord, type: :model
-  config.include Shoulda::Callback::Matchers::ActiveModel
   config.include Capybara::Webkit::RspecMatchers, type: :feature
 end
 

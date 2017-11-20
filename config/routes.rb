@@ -4,5 +4,14 @@ ShoppingCart::Engine.routes.draw do
   resource :cart, only: [:show, :update]
   resources :checkout
   resources :order_items, only: [:create, :update, :destroy]
+  resources :orders do
+    collection do
+      get :in_progress
+      get :processing
+      get :in_delivery
+      get :delivered
+      get :canceled
+    end
+  end
 
 end

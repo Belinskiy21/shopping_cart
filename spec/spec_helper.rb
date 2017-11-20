@@ -9,6 +9,8 @@ require 'capybara-webkit'
 require 'capybara/webkit/matchers'
 require 'transactional_capybara/rspec'
 require 'database_cleaner'
+require 'ffaker'
+require 'aasm/rspec'
 Capybara.javascript_driver = :webkit
 Capybara.default_max_wait_time = 5
 
@@ -24,7 +26,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.clean_with(:truncation, except: %w(ar_internal_metadata))
     DatabaseCleaner.strategy = :transaction
   end
 

@@ -5,7 +5,7 @@ module ShoppingCart
   RSpec.describe Order, type: :model do
     context 'association' do
       it { should have_many(:order_items).dependent :destroy }
-      it { should have_many(:books).through :order_items}
+      it { should have_many(:products).through :order_items}
       it { should have_one(:coupon).dependent :destroy }
       it { should have_many(:addresses).dependent :destroy }
       it { should have_one(:billing) }

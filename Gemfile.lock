@@ -151,7 +151,7 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.1)
     rack (2.0.3)
-    rack-test (0.7.0)
+    rack-test (0.8.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
@@ -277,20 +277,20 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  capybara-webkit
-  database_cleaner
+  capybara-webkit (~> 1.1)
+  database_cleaner (~> 1.6)
   factory_bot_rails
-  ffaker
+  ffaker (~> 2.6, >= 2.6.0)
   rails-controller-testing
-  rspec-rails
+  rspec-rails (~> 3.6)
   rubocop
   shopping_cart!
-  shoulda-callback-matchers
-  shoulda-matchers
+  shoulda-callback-matchers (~> 1.1, >= 1.1.4)
+  shoulda-matchers (~> 3.1)
   spring (~> 2.0, >= 2.0.1)
   spring-commands-rspec
   sqlite3
-  transactional_capybara
+  transactional_capybara (= 0.2)
 
 BUNDLED WITH
    1.16.0.pre.3

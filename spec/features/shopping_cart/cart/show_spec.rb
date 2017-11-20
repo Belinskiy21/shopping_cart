@@ -3,7 +3,7 @@ require 'rails_helper'
 module ShoppingCart
   RSpec.feature 'Visiting Cart', type: :feature do
     before do
-      @order = FactoryGirl.create(:order)
+      @order = FactoryBot.create(:order)
       visit cart_path(@order)
     end
 

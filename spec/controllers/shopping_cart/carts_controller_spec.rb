@@ -3,6 +3,7 @@ require 'rails_helper'
 module ShoppingCart
 
   RSpec.describe CartsController, type: :controller do
+    routes { ShoppingCart::Engine.routes }
     let!(:user) { FactoryBot.create(:user) }
     let!(:order) { FactoryBot.create(:order, :with_order_item, user_id: user.id) }
     describe 'GET #show' do

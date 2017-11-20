@@ -7,7 +7,7 @@ module ShoppingCart
 
 
     before do
-      FactoryBot.create(:book)
+      FactoryBot.create(:product)
       FactoryBot.create_list(:shipping_method, 2)
       @order = FactoryBot.create(:order)
     end

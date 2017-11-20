@@ -8,6 +8,6 @@ class Ability
 
       can :read, Product
       can :create, Product if user.persisted?
-  
+
   end
 end
