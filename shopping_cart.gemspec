@@ -30,5 +30,20 @@ Gem::Specification.new do |s|
   s.add_dependency 'cancancan'
   s.add_dependency 'sass-rails'
 
+  s.test_files = Dir["spec/`/*"]
+
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'factory_bot_rails'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara-webkit'
+  s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'ffaker'
+  s.add_development_dependency 'shoulda-callback-matchers'
+  s.add_development_dependency 'shoulda-matchers'
+  s.add_development_dependency 'transactional_capybara'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'rails-controller-testing'
+  s.add_development_dependency 'spring', '~> 2.0', '>= 2.0.1'
+  s.add_development_dependency 'spring-commands-rspec'
 end
