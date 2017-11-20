@@ -28,6 +28,7 @@ RSpec.configure do |config|
   config.include Shoulda::Matchers::ActiveModel, type: :model
   config.include Shoulda::Matchers::ActiveRecord, type: :model
   config.include Capybara::Webkit::RspecMatchers, type: :feature
+  config.include DeviseRequestSpecHelpers, type: :feature
 end
 
 Shoulda::Matchers.configure do |config|

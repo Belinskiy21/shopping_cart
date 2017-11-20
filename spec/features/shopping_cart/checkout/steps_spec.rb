@@ -14,17 +14,15 @@ module ShoppingCart
 
     it 'should pass', js: true do
       sign_in(user)
-      visit root_path
-      page.first(:button, I18n.t('button.buy_now')).click
-      expect(page.find('a.hidden-xs>span.shop-icon')).to have_content '1'
+      visit main_app.root_path
+      page.first(:link_or_button, 'Add to cart').click
       wait_for_ajax
-      visit root_path
-      page.find('a.hidden-xs').click
+      visit shopping_cart.root_path
       expect(page).to have_content I18n.t('cart')
-      expect(page.current_path).to eq  cart_path(:order_id)
+      expect(page.current_path).to eq  shopping_cart.root_path(:order_id)
       page.find(:link_or_button, I18n.t('checkout')).click
       sleep 2
-      expect(page.current_path).to eq checkout_path(:addresses)
+      expect(page.current_path).to eq shopping_cart.checkout_path(:addresses)
 
       within('form#new_addresses_form') do
         fill_in 'addresses_form[billing][first_name]', with: 'Monica'
@@ -46,10 +44,10 @@ module ShoppingCart
         page.find(:link_or_button, I18n.t('save_and_continue')).click
       end
 
-      expect(page.current_path).to eq checkout_path(:delivery)
+      expect(page.current_path).to eq shopping_cart.checkout_path(:delivery)
       all('.radio-label').first.click
       page.find(:link_or_button, I18n.t('save_and_continue')).click
-      expect(page.current_path).to eq checkout_path(:payment)
+      expect(page.current_path).to eq shopping_cart.checkout_path(:payment)
 
       within('form#new_credit_card') do
         fill_in 'credit_card[number]', with: '1234123412341234'
@@ -60,10 +58,10 @@ module ShoppingCart
         page.find(:link_or_button, I18n.t('save_and_continue')).click
       end
 
-      expect(page.current_path).to eq checkout_path(:confirm)
+      expect(page.current_path).to eq shopping_cart.checkout_path(:confirm)
 
       find('input[type="submit"]').click
-      expect(page.current_path).to eq checkout_path(:complete)
+      expect(page.current_path).to eq shopping_cart.checkout_path(:complete)
       expect(page).to have_content  I18n.t('has_been_sent_to') + user.email
     end
   end

@@ -11,6 +11,7 @@ require 'transactional_capybara/rspec'
 require 'database_cleaner'
 require 'ffaker'
 require 'aasm/rspec'
+require 'rails-controller-testing'
 Capybara.javascript_driver = :webkit
 Capybara.default_max_wait_time = 5
 

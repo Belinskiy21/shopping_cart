@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :order do
+  factory :order, class: 'ShoppingCart::Order' do
     user
     shipping_method_id 1
     credit_card_id nil

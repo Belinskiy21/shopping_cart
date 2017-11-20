@@ -12,7 +12,7 @@ module ShoppingCart
       before { post :create, xhr: true,  params: create_params }
 
       it 'returns http success' do
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status 302
       end
 
       it 'assign @order_item'  do

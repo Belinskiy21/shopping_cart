@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :coupon do
+  factory :coupon, class: 'ShoppingCart::Coupon' do
     code 'D1234'
     discount 0.2
   end
