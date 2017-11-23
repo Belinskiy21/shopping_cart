@@ -18,6 +18,32 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.4"
+  s.add_dependency 'virtus'
+  s.add_dependency 'wicked'
+  s.add_dependency 'jquery-rails'
+  s.add_dependency 'country_select'
+  s.add_dependency 'haml'
+  s.add_dependency 'rails-i18n'
+  s.add_dependency 'devise'
+  s.add_dependency 'aasm'
+  s.add_dependency 'pry'
+  s.add_dependency 'cancancan'
+  s.add_dependency 'sass-rails'
+
+  s.test_files = Dir["spec/`/*"]
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'factory_bot_rails'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara-webkit', '~> 1.1'
+  s.add_development_dependency 'database_cleaner', '~> 1.6'
+  s.add_development_dependency 'ffaker', '~> 2.6', '>= 2.6.0'
+  s.add_development_dependency 'shoulda-callback-matchers', '~> 1.1', '>= 1.1.4'
+  s.add_development_dependency 'shoulda-matchers', '~> 3.1'
+  s.add_development_dependency 'transactional_capybara', '0.2'
+  s.add_development_dependency 'rspec-rails', '~> 3.6'
+  s.add_development_dependency 'rails-controller-testing'
+  s.add_development_dependency 'spring', '~> 2.0', '>= 2.0.1'
+  s.add_development_dependency 'spring-commands-rspec'
 end
